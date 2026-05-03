@@ -203,17 +203,17 @@ export default function SIVAMap({ mode = 'vulnerability' }: SIVAMapProps) {
 
   const getInsightText = (props: any, mode: string) => {
     const type = props.amenity || props.building || props.office || '';
-    if (['embassy', 'diplomatic'].includes(type)) return 'Fasilitas Diplomatik 🎌: Otoritas internasional untuk perlindungan warga negara.';
-    if (['hospital', 'clinic', 'doctors'].includes(type)) return 'Fasilitas Medis Strategis: Memerlukan pemantauan anomali aktivitas operasional di area risiko tinggi.';
-    if (['casino'].includes(type)) return 'Hotspot Risiko Tinggi ⚠️: Terindikasi kuat sebagai kompleks tertutup dengan aktivitas operasi siber/penipuan.';
-    if (['apartments', 'industrial'].includes(type)) return 'Indikasi Area Tertutup ⚠️: Potensi operasi terselubung dan penyekapan.';
-    if (['police'].includes(type)) return 'Titik Evakuasi Utama 🛡️: Otoritas lokal terdekat untuk prosedur penyelamatan dan pelaporan.';
+    if (['embassy', 'diplomatic'].includes(type)) return 'Diplomatic Facility 🎌: International authority for citizen protection.';
+    if (['hospital', 'clinic', 'doctors'].includes(type)) return 'Strategic Medical Facility: Requires monitoring of operational activity anomalies in high-risk areas.';
+    if (['casino'].includes(type)) return 'High-Risk Hotspot ⚠️: Strongly indicated as a closed complex with cyber/scam operation activities.';
+    if (['apartments', 'industrial'].includes(type)) return 'Closed Area Indication ⚠️: Potential covert operations and confinement.';
+    if (['police'].includes(type)) return 'Primary Evacuation Point 🛡️: Nearest local authority for rescue and reporting procedures.';
     if (['ferry_terminal', 'bus_station', 'aerodrome', 'airport'].includes(type)) return 'Caution: Monitor this transit point before departure. Potential high-risk corridor.';
-    if (['residential', 'house'].includes(type)) return 'Area Permukiman: Rentan eksploitasi dan perekrutan ilegal.';
+    if (['residential', 'house'].includes(type)) return 'Residential Area: Vulnerable to exploitation and illegal recruitment.';
     
-    if (mode === 'transit' && props.highway) return 'Jalur Logistik/Transit: Rute pergerakan potensial.';
-    if (mode === 'escape' && props.highway) return 'Rute Evakuasi Terdekat: Jalur darat menuju Safe Zone.';
-    return 'Pemantauan area umum.';
+    if (mode === 'transit' && props.highway) return 'Logistics/Transit Route: Potential movement route.';
+    if (mode === 'escape' && props.highway) return 'Nearest Evacuation Route: Land route to Safe Zone.';
+    return 'General area monitoring.';
   };
 
   return (
@@ -254,7 +254,7 @@ export default function SIVAMap({ mode = 'vulnerability' }: SIVAMapProps) {
                     try {
                       const center = turf.center(feature);
                       const [lng, lat] = center.geometry.coordinates;
-                      address = `Koordinat: ${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+                      address = `Coordinates: ${lat.toFixed(4)}, ${lng.toFixed(4)}`;
                     } catch (e) {
                       address = 'Sihanoukville Area';
                     }
@@ -273,8 +273,8 @@ export default function SIVAMap({ mode = 'vulnerability' }: SIVAMapProps) {
                       <span>${name}</span>
                       ${khmerNote}
                     </h3>
-                    <p class="text-xs mb-1 text-gray-600"><span class="font-semibold">Alamat:</span> ${address}</p>
-                    <p class="text-xs mb-1 text-gray-600"><span class="font-semibold">Tipe:</span> ${props.amenity || props.building || props.highway || 'N/A'}</p>
+                    <p class="text-xs mb-1 text-gray-600"><span class="font-semibold">Address:</span> ${address}</p>
+                    <p class="text-xs mb-1 text-gray-600"><span class="font-semibold">Type:</span> ${props.amenity || props.building || props.highway || 'N/A'}</p>
                     <div class="mt-2 bg-gray-50 p-2 rounded border-l-4 border-indigo-600 shadow-sm">
                       <p class="text-[10px] font-bold text-indigo-700 uppercase mb-1">SIVA Intelligence Insight</p>
                       <p class="text-xs text-gray-800 leading-relaxed font-medium">${insight}</p>
