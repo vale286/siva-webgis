@@ -10,7 +10,7 @@ export default function HotspotPage() {
   return (
     <main className="h-screen w-screen relative overflow-hidden flex flex-col">
       {/* Header Panel */}
-      <div className={`absolute top-16 md:top-4 left-4 md:left-16 z-[9998] bg-white p-4 rounded shadow-lg border-l-4 border-red-600 w-[calc(100vw-32px)] md:w-80 transition-all duration-300 ${showInfo ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none md:translate-y-0 md:opacity-100 md:pointer-events-auto'}`}>
+      <div className={`absolute top-24 md:top-6 left-4 md:left-20 z-[9998] bg-white p-4 rounded shadow-lg border-l-4 border-red-600 w-[calc(100vw-32px)] md:w-80 transition-all duration-300 ${showInfo ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none md:translate-y-0 md:opacity-100 md:pointer-events-auto'}`}>
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center">
             <img src="/assets/logo_siva.png" alt="SIVA Logo" className="w-8 h-8 object-contain mr-2" />
@@ -30,7 +30,7 @@ export default function HotspotPage() {
       {!showInfo && (
         <button 
           onClick={() => setShowInfo(true)}
-          className="md:hidden absolute top-16 left-4 z-[9998] bg-white px-3 py-2 rounded shadow border-l-4 border-red-600 text-sm font-bold flex items-center"
+          className="md:hidden absolute top-24 left-4 z-[9998] bg-white px-3 py-2 rounded shadow border-l-4 border-red-600 text-sm font-bold flex items-center"
         >
           <span className="mr-2">ℹ️</span> Module Info
         </button>

@@ -10,7 +10,7 @@ export default function EscapePage() {
   return (
     <main className="h-screen w-screen relative overflow-hidden flex flex-col">
       {/* Informational Panels (Combined for mobile toggle) */}
-      <div className={`absolute top-16 md:top-4 left-4 md:left-16 z-[9998] flex flex-col gap-4 w-[calc(100vw-32px)] md:w-80 transition-all duration-300 ${showInfo ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none md:translate-y-0 md:opacity-100 md:pointer-events-auto'}`}>
+      <div className={`absolute top-24 md:top-6 left-4 md:left-20 z-[9998] flex flex-col gap-4 w-[calc(100vw-32px)] md:w-80 transition-all duration-300 ${showInfo ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none md:translate-y-0 md:opacity-100 md:pointer-events-auto'}`}>
         
         {/* Header Panel */}
         <div className="bg-white p-4 rounded shadow-lg border-l-4 border-green-600">
@@ -61,7 +61,7 @@ export default function EscapePage() {
       {!showInfo && (
         <button 
           onClick={() => setShowInfo(true)}
-          className="md:hidden absolute top-16 left-4 z-[9998] bg-white px-3 py-2 rounded shadow border-l-4 border-green-600 text-sm font-bold flex items-center"
+          className="md:hidden absolute top-24 left-4 z-[9998] bg-white px-3 py-2 rounded shadow border-l-4 border-green-600 text-sm font-bold flex items-center"
         >
           <span className="mr-2">🛡️</span> Escape Info
         </button>

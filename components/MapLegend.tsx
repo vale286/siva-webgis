@@ -14,7 +14,7 @@ export default function MapLegend({ mode = 'vulnerability' }: MapLegendProps) {
     return (
       <button 
         onClick={() => setIsOpen(true)}
-        className="absolute bottom-6 right-6 z-[9999] bg-slate-900/90 text-white p-3 rounded-full shadow-xl border border-slate-700 hover:bg-slate-800 transition-colors"
+        className="absolute bottom-24 right-6 z-[9999] bg-slate-900/90 text-white p-3 rounded-full shadow-xl border border-slate-700 hover:bg-slate-800 transition-colors"
         title="Show Legend"
       >
         <Activity size={24} />
@@ -23,7 +23,7 @@ export default function MapLegend({ mode = 'vulnerability' }: MapLegendProps) {
   }
 
   return (
-    <div className="absolute bottom-6 right-6 z-[9999] bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-2xl border border-gray-200 w-64">
+    <div className="absolute bottom-24 right-6 z-[9999] bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-2xl border border-gray-200 w-64">
       <div className="flex justify-between items-center mb-3 border-b pb-2">
         <h3 className="font-bold text-gray-800 flex items-center">
           <Activity size={18} className="mr-2 text-indigo-600" /> Legend

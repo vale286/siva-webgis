@@ -246,8 +246,19 @@ export default function SIVAMap({ mode = 'vulnerability' }: SIVAMapProps) {
                 if (props.addr_housenumber) address = props.addr_housenumber + ' ' + address;
                 
                 // Fallback address
-                if (!address) {
-                  address = props.place || props.suburb || props.city || 'Sihanoukville Area';
+                if (!address || address.trim() === '') {
+                  const region = props.place || props.suburb || props.city;
+                  if (region) {
+                    address = region;
+                  } else {
+                    try {
+                      const center = turf.center(feature);
+                      const [lng, lat] = center.geometry.coordinates;
+                      address = `Koordinat: ${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+                    } catch (e) {
+                      address = 'Sihanoukville Area';
+                    }
+                  }
                 }
 
                 // Khmer detection
