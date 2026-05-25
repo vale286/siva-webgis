@@ -17,6 +17,11 @@ export default function GlobalChatbot() {
       id: '1',
       sender: 'ai',
       text: "Hello! I am SIVA AI, your geospatial intelligence expert. I can assist you with information regarding human trafficking in Cambodia, analyze map patterns, or detail evacuation protocols. How can I help you today?"
+    },
+    {
+      id: '2',
+      sender: 'ai',
+      text: "[NEW UPDATE FOR SIVA] 🚀 The Spatial Segregation module is now live! We can now analyze the Nearest Neighbor patterns of syndicate operations and see how they are strictly confined within commercial/built-up zones. Let's explore!"
     }
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);

@@ -7,7 +7,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
+theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
@@ -43,4 +43,47 @@ main {
 @keyframes march {
   0% { stroke-dashoffset: 25; }
   100% { stroke-dashoffset: 0; }
+}
+
+/* Custom glowing markers for heatmap style in Spatial Segregation */
+.glow-marker-low {
+  background: rgba(234, 179, 8, 0.4);
+  border: 2px solid rgba(234, 179, 8, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.6);
+  width: 14px;
+  height: 14px;
+}
+.glow-marker-med {
+  background: rgba(249, 115, 22, 0.5);
+  border: 2px solid rgba(249, 115, 22, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.7);
+  width: 16px;
+  height: 16px;
+}
+.glow-marker-high {
+  background: rgba(220, 38, 38, 0.6);
+  border: 2px solid rgba(220, 38, 38, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.8);
+  width: 18px;
+  height: 18px;
+  animation: pulse-glow-marker 2s infinite;
+}
+@keyframes pulse-glow-marker {
+  0% { box-shadow: 0 0 8px rgba(220, 38, 38, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.9); }
+  100% { box-shadow: 0 0 8px rgba(220, 38, 38, 0.6); }
+}
+
+/* ============================================
+   HIDE ALL BROKEN LEAFLET DEFAULT MARKERS
+   Prevents broken image icons from rendering.
+   CircleMarker (SVG) remains fully visible.
+   ============================================ */
+img.leaflet-marker-icon,
+img.leaflet-marker-shadow {
+  display: none !important;
+  opacity: 0 !important;
 }

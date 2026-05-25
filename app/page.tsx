@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Activity, AlertTriangle, Route, Shield } from 'lucide-react';
+import { Activity, AlertTriangle, Route, Shield, Compass } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -91,6 +91,17 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-green-300 transition-colors">Escape & Rescue</h3>
             <p className="text-base text-gray-200">Planning of safe zones, evacuation routes, and emergency facilities.</p>
+          </Link>
+
+          <Link href="/modules/spatial-segregation" className="group relative p-8 bg-white/10 backdrop-blur-md border border-cyan-500/30 shadow-xl rounded-xl hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] md:col-span-2">
+            <span className="absolute top-4 right-4 bg-cyan-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(6,182,212,0.8)] animate-pulse">
+              NEW
+            </span>
+            <div className="bg-cyan-500/20 w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:bg-cyan-500/40 transition-colors">
+              <Compass size={28} className="text-cyan-400" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">Spatial Segregation</h3>
+            <p className="text-base text-gray-200">Nearest neighbor analysis of syndicate operations within commercial zones.</p>
           </Link>
         </div>
       </section>
