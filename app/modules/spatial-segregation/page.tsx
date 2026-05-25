@@ -89,25 +89,26 @@ export default function SpatialSegregationPage() {
           </div>
         </div>
 
-      </div>
+        {/* SPATIAL ANALYSIS RESULTS - Moved inside flex-col to prevent overlap with Controls, added mt-2 for breathing room */}
+        <div className="shrink-0 p-3 bg-slate-900/80 backdrop-blur border border-cyan-500/30 rounded-xl text-white hidden md:block mt-2 shadow-2xl">
+          <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider mb-1.5 flex items-center gap-1">
+            <ShieldAlert size={11} /> Spatial Analysis Results
+          </p>
+          <p className="text-[10px] text-gray-300 leading-snug mb-1.5">
+            Segregation Confirmed: Operations are strictly confined within insulated commercial boundaries (Class 50).
+          </p>
+          <p className="text-[10px] text-gray-400 leading-snug mb-2 italic border-l-2 border-cyan-700 pl-2">
+            Intelligence Context: Clustered coordinates heavily correlate with suspected scam compounds and trafficking hubs as exposed by investigative reports from Al Jazeera, VICE, and SCMP.
+          </p>
+          <p className="text-[10px] text-gray-400">
+            <span className="text-cyan-300 font-semibold">NNI:</span> 0.84 
+            <span className="text-yellow-400 font-semibold ml-1">(Clustered)</span>
+            <span className="mx-1.5 text-slate-600">|</span>
+            <span className="text-cyan-300 font-semibold">Z-Score:</span> -1.60
+          </p>
+        </div>
 
-      {/* Poin 1 Fix: Stats panel — sejajar dengan panel kiri (left-4, w-[calc(100vw-32px)] md:w-72) */}
-      <div className="absolute bottom-24 left-4 z-[1000] w-[calc(100vw-32px)] md:w-72 p-3 bg-slate-900/80 backdrop-blur border border-cyan-500/30 rounded-xl text-white hidden md:block">
-        <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider mb-1.5 flex items-center gap-1">
-          <ShieldAlert size={11} /> Spatial Analysis Results
-        </p>
-        <p className="text-[10px] text-gray-300 leading-snug mb-1.5">
-          Segregation Confirmed: Operations are strictly confined within insulated commercial boundaries (Class 50).
-        </p>
-        <p className="text-[10px] text-gray-400 leading-snug mb-2 italic border-l-2 border-cyan-700 pl-2">
-          Intelligence Context: Clustered coordinates heavily correlate with suspected scam compounds and trafficking hubs as exposed by investigative reports from Al Jazeera, VICE, and SCMP.
-        </p>
-        <p className="text-[10px] text-gray-400">
-          <span className="text-cyan-300 font-semibold">NNI:</span> 0.84 
-          <span className="text-yellow-400 font-semibold ml-1">(Clustered)</span>
-          <span className="mx-1.5 text-slate-600">|</span>
-          <span className="text-cyan-300 font-semibold">Z-Score:</span> -1.60
-        </p>
+      {/* Left Sidebar container closes here */}
       </div>
 
       {/* Mobile Key Insights — shown when panel is open */}
